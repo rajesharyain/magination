@@ -1,0 +1,20 @@
+[
+    {
+        "text": "Hello! This is a test of our text-to-speech system.",
+        "language": "English",
+        "emotion": "happy",
+        "speed": 1.0
+    },
+    {
+        "text": "¡Hola! Este es un sistema de texto a voz.",
+        "language": "Spanish",
+        "emotion": "neutral",
+        "speed": 1.0
+    },
+    {
+        "text": "Bonjour! C'est un système de synthèse vocale.",
+        "language": "French",
+        "emotion": "surprised",
+        "speed": 1.0
+    }
+] 

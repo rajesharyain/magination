@@ -1,0 +1,15 @@
+name: tts-app
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    - fastapi==0.109.2
+    - uvicorn==0.27.1
+    - python-multipart==0.0.9
+    - gTTS==2.5.1
+    - numpy==1.26.4
+    - soundfile==0.12.1
+    - python-dotenv==1.0.1 

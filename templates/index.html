@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Text-to-Speech Generator</h1>
+
+        <!-- Simple TTS Form -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Simple Text-to-Speech</h2>
+            <form id="simpleTtsForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Text</label>
+                    <textarea id="simpleText" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" rows="3" placeholder="Enter text to convert to speech..."></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Language</label>
+                    <select id="simpleLanguage" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></select>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">Generate Audio</button>
+            </form>
+            <div id="simpleAudio" class="mt-4"></div>
+        </div>
+
+        <!-- Advanced TTS Form -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Advanced Text-to-Speech</h2>
+            <form id="advancedTtsForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Text</label>
+                    <textarea id="advancedText" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" rows="3" placeholder="Enter text to convert to speech..."></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Language</label>
+                        <select id="language" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Emotion</label>
+                        <select id="emotion" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Speed</label>
+                    <input type="range" id="speed" min="0.5" max="2.0" step="0.1" value="1.0" class="mt-1 block w-full">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>Slower</span>
+                        <span>Faster</span>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">Generate Audio</button>
+            </form>
+            <div id="advancedAudio" class="mt-4"></div>
+        </div>
+
+        <!-- Script Upload Form -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4">Process Story Script</h2>
+            <form id="scriptForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Upload Script (JSON)</label>
+                    <input type="file" id="scriptFile" accept=".json" class="mt-1 block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-md file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-blue-50 file:text-blue-700
+                        hover:file:bg-blue-100">
+                    <p class="mt-1 text-sm text-gray-500">Upload a JSON file containing your story script</p>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">Process Script</button>
+            </form>
+            <div id="scriptAudio" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html> 
